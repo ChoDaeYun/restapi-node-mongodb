@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "dccac770-4632-480c-874f-98bd6a093f5f",
+		"name": "nodejs restapi test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SignIn",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"chody0116@gmail.com\",\n    \"password\":\"daeyun1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/sign/in",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"sign",
+						"in"
+					]
+				},
+				"description": "로그인요청"
+			},
+			"response": []
+		},
+		{
+			"name": "SignUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"daeyun\",\n    \"email\":\"chody0116@gmail.com\",\n    \"password\":\"daeyun1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/sign/up",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"sign",
+						"up"
+					]
+				},
+				"description": "가입요청"
+			},
+			"response": []
+		},
+		{
+			"name": "회원정보조회",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjE4MDY4ZjRiOWQ1NTM2YTVkYmY5MWIiLCJuYW1lIjoiZGFleXVuIiwiZW1haWwiOiJjaG9keTAxMTZAZ21haWwuY29tIiwiaWF0IjoxNTk1NDEwMDY4LCJleHAiOjE1OTU0MTM2Njh9.9qxC1Pn9YfG7mX1br9Myf5bhzPJzdWuUqtRGfn5Kpq0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/user",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user"
+					]
+				},
+				"description": "token 값으로 회원정보 가져오기 "
+			},
+			"response": []
+		},
+		{
+			"name": "회원정보수정",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjE4MDY4ZjRiOWQ1NTM2YTVkYmY5MWIiLCJuYW1lIjoiZGFleXVuIiwiZW1haWwiOiJjaG9keTAxMTZAZ21haWwuY29tIiwiaWF0IjoxNTk1NDEwMDY4LCJleHAiOjE1OTU0MTM2Njh9.9qxC1Pn9YfG7mX1br9Myf5bhzPJzdWuUqtRGfn5Kpq0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"daeyun\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/user",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "회원정보삭제",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjE3ZDc5NWYwMDBiMTdiMmM0MDI3ZTgiLCJuYW1lIjoiZGFleXVuIiwiZW1haWwiOiJjaG9keTAxMTZAZ21haWwuY29tIiwiaWF0IjoxNTk1NDA4Nzc3LCJleHAiOjE1OTU0MTIzNzd9.qoWQ7d9uX3hxXqGwRPJ3JkUQQtoUIxTlHYFMfIiZu_s",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/user",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

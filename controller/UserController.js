@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 mongoose.set("useFindAndModify", false);
 
 
-// User Schema
+// Response User
 function UserData(data) {
     this.id = data._id;
     this.name= data.name;

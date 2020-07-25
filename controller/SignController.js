@@ -6,7 +6,6 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 exports.signup = [
-    // Validate fields.
     body("name").isLength({ min: 1 }).trim().withMessage("name must be specified.")
         .isAlphanumeric().withMessage("name has non-alphanumeric characters."),
     body("email").isLength({ min: 1 }).trim().withMessage("Email must be specified.")
@@ -73,7 +72,8 @@ exports.signin = [
                                let userData = {
                                    _id: user._id,
                                    name: user.name,
-                                   email: user.email
+                                   email: user.email,
+                                   auth:'user'
                                };
 
                                const jwtPayload = userData;

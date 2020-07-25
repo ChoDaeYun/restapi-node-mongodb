@@ -7,14 +7,19 @@ require('./config/db'); // const db
 const indexRouter = require('./routes/index');
 const apiRouter = require('./routes/api');
 const apiResponse = require('./controller/response/apiResponse');
+var cors = require("cors");
 
 const app = express();
 
 app.use(logger('dev'));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+//To allow cross-origin requests
+app.use(cors());
 
 //Route Prefixes
 app.use("/", indexRouter);
@@ -27,8 +32,7 @@ app.all("*", function(req, res) {
     return apiResponse.notFoundResponse(res, "Page not found");
 });
 
-app.use((err, req, res) => {
-    return apiResponse.unauthorizedResponse(res, err.message);
+app.use((err, req, res, next) => {
     if(err.name == "UnauthorizedError"){
         return apiResponse.unauthorizedResponse(res, err.message);
     }
